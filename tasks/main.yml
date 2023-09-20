@@ -155,6 +155,10 @@
   tags:
     - wg-config
 
+- name: Sleep for 10 seconds and continue with play
+  ansible.builtin.wait_for:
+    timeout: 10
+
 - name: Generate WireGuard configuration file
   ansible.builtin.template:
     src: etc/wireguard/wg.conf.j2
